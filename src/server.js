@@ -7,6 +7,7 @@ const serverError = require('./error-handlers/500');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+
 app.get('/person', (req, res, next) => {
   let { name } = req.query;
   try {
@@ -20,12 +21,19 @@ app.get('/person', (req, res, next) => {
   }
 });
 
+// catch all if the route is not /person
 app.use('*', notFound);
+// final catch if something other than a routing issue happened
 app.use(serverError);
 
 
+// wrapper for starting the server, this is exported and called in index.js
 function start() {
   app.listen(PORT, () => { console.log(`you are listening on port ${PORT}`); });
 }
 
+/**
+ * app: express app and all of its routes
+ * start: start function
+ */
 module.exports = { app, start };
