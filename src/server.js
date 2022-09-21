@@ -2,11 +2,12 @@
 
 const express = require('express');
 
+const notFound = require('./error-handlers/404');
+const 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.get('/person', (req, res, next) => {
-
   let { name } = req.query;
   try {
     if (name) {
@@ -18,6 +19,9 @@ app.get('/person', (req, res, next) => {
     next(err.message);
   }
 });
+
+
+
 
 function start() {
   app.listen(PORT, () => { console.log(`you are listening on port ${PORT}`); });
