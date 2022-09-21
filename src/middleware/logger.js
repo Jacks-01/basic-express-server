@@ -6,8 +6,8 @@ const logger = (req, res, next) => {
     path: req.path,
   };
     
-  console.log(`Logger: ${log}`);
-
+  console.log(`Logger: ${JSON.stringify(log)}`);
+  next();
 };
 
 module.exports = logger;

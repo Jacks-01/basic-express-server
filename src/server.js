@@ -2,11 +2,14 @@
 
 const express = require('express');
 
+const logger = require('./middleware/logger');
 const notFound = require('./error-handlers/404');
 const serverError = require('./error-handlers/500');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+
+app.use(logger);
 
 app.get('/person', (req, res, next) => {
   let { name } = req.query;
