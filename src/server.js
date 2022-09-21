@@ -3,7 +3,7 @@
 const express = require('express');
 
 const notFound = require('./error-handlers/404');
-const 
+const serverError = require('./error-handlers/500');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -20,7 +20,8 @@ app.get('/person', (req, res, next) => {
   }
 });
 
-
+app.use('*', notFound);
+app.use(serverError);
 
 
 function start() {
