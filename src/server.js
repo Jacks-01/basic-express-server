@@ -21,7 +21,6 @@ app.get('/person', validator, (req, res, next) => {
     } else { res.status(500).send('SERVER ERROR'); }
 
   } catch (err) {
-    // console.error(err);
     next(err.message);
   }
 });

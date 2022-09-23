@@ -1,12 +1,13 @@
 'use strict';
 
-const validator = (error, req, res, next) => {
+const validator = ( req, res, next) => {
   console.log('validator.js');
-  if (req.params.name) {
-    console.log(req.params.name);
+  if (req.query.name) {
+    console.log(req.query.name);
+    next();
 
   } else {
-    console.error(error);
+    next('name required');
   }
   next();
 };
