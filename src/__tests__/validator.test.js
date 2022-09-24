@@ -19,10 +19,10 @@ describe('Test validator middleware ', () => {
 
 
     // ? Not sure if this should be handled here or in server.js, error handling may be overlapping or conflicting
-    // it('throws error on empty query', () => {
-    //     req = {}
-    //     validator(req, res, next);
-    //     expect(res).toEqual('name required')
-    // });
+//     it('throws error on empty query', () => {
+//         req = {}
+//         validator(req, res, next);
+//         expect(res).toEqual('name required')
+//     });
 
 })
