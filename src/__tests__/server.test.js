@@ -15,14 +15,14 @@ describe('API Server', () => {
     const response = await request.get('/person?name=');
 
     expect(response.status).toEqual(500);
-    expect(response.body.route).toEqual('/person?name=');
-    expect(response.body.message).toEqual('SERVER ERROR');
+    expect(response.body.route).toEqual('/person');
+    expect(response.body.message).toEqual('name required');
 
   }); 
     
-  it('handles \'/person\' route without query param correctly', async () => {
+  it('handles /person route without query param correctly', async () => {
     const response = await request.get('/person').query({ name: 'jack' });
 
-    expect(response.text).toEqual({name: request.query.name});
+    expect(response.body).toEqual({name: 'jack'});
   });
 });

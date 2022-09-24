@@ -17,7 +17,7 @@ app.get('/person', validator, (req, res, next) => {
   let { name } = req.query;
   try {
     if (name) {
-      res.status(200).json(`name: ${name}`);
+      res.status(200).json({ name: name });
     } else { res.status(500).send('SERVER ERROR'); }
 
   } catch (err) {
