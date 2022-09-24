@@ -2,8 +2,8 @@
 
 const validator = ( req, res, next) => {
   console.log('validator.js');
-  if (req.query.name) {
-    console.log(req.query.name);
+  if (req.query) {
+    console.log(req.query);
     next();
 
   } else {
