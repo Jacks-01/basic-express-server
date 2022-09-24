@@ -17,4 +17,12 @@ describe('Test validator middleware ', () => {
         // expect(next).toHaveBeenCalled();
     })
 
+
+    // ? Not sure if this should be handled here or in server.js, error handling may be overlapping or conflicting
+    // it('throws error on empty query', () => {
+    //     req = {}
+    //     validator(req, res, next);
+    //     expect(res).toEqual('name required')
+    // });
+
 })

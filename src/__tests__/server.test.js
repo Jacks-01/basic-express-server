@@ -15,8 +15,8 @@ describe('API Server', () => {
     const response = await request.get('/person?name=');
 
     expect(response.status).toEqual(500);
-    expect(response.body.route).toEqual('/person');
-    expect(response.body.message).toEqual('name required');
+    // ? Not sure if this should work or not since validator is the one returning the message
+    expect(response.text).toEqual('SERVER ERROR');
 
   }); 
     
