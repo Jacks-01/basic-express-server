@@ -25,6 +25,10 @@ app.get('/person', validator, (req, res, next) => {
   }
 });
 
+app.get('/', (req, res, next) => {
+  res.status(200).send('hello world');
+});
+
 // catch all if the route is not /person
 app.use('*', notFound);
 // final catch if something other than a routing issue happened
